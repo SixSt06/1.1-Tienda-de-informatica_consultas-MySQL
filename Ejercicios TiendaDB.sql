@@ -48,6 +48,35 @@ Select nombre from fabricantes order by nombre desc;
 
 /*Lista los nombres de los productos ordenados en primer lugar por el nombre de forma ascendente y 
 en segundo lugar por el precio de forma descendente.*/
-Select nombre, precio from productos order by nombre asc, precio desc
+Select nombre, precio from productos order by nombre asc, precio desc;
 
+-- Devuelve una lista con las 5 primeras filas de la tabla fabricante.
+select * from fabricantes limit 0,5;
+
+-- Devuelve una lista con 2 filas a partir de la cuarta fila de la tabla fabricante. La cuarta fila también se debe incluir en la respuesta.
+Select * from fabricantes limit 3,2;
+
+-- Lista el nombre y el precio del producto más barato. (Utilice solamente las cláusulas ORDER BY y LIMIT)
+Select nombre, precio from productos where precio order by precio limit 0,1;
+
+-- Lista el nombre y el precio del producto más caro. (Utilice solamente las cláusulas ORDER BY y LIMIT)
+Select nombre, precio from productos where precio order by  precio desc limit 0,1;
+
+-- Lista el nombre de todos los productos del fabricante cuyo identificador de fabricante es igual a 2.
+Select nombre from productos where id_fabricante = 2;
+
+-- Lista el nombre de los productos que tienen un precio menor o igual a 120€.
+Select nombre from productos where precio <= 120;
+
+-- Lista el nombre de los productos que tienen un precio mayor o igual a 400€.
+Select nombre from productos where precio >= 400;
+
+-- Lista el nombre de los productos que no tienen un precio mayor o igual a 400€.
+Select nombre from productos where precio < 400;
+
+-- Lista todos los productos que tengan un precio entre 80€ y 300€. Sin utilizar el operador BETWEEN.
+Select * from productos where precio >80 and precio < 300;
+
+-- 25.- Lista todos los productos que tengan un precio entre 60€ y 200€. Utilizando el operador BETWEEN.
+Select * from productos where precio between 60 and 200;
 
