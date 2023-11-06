@@ -80,3 +80,45 @@ Select * from productos where precio >80 and precio < 300;
 -- 25.- Lista todos los productos que tengan un precio entre 60€ y 200€. Utilizando el operador BETWEEN.
 Select * from productos where precio between 60 and 200;
 
+-- 26.- Lista todos los productos que tengan un precio mayor que 200€ y que el identificador de fabricante sea igual a 6.
+Select * from productos where precio > 200 and id_fabricante=6;
+
+-- 27.- Lista todos los productos donde el identificador de fabricante sea 1, 3 o 5. Sin utilizar el operador IN.
+Select * from productos  where id_fabricante = 1 or id_fabricante = 3 or id_fabricante = 5;
+
+-- 28.- Lista todos los productos donde el identificador de fabricante sea 1, 3 o 5. Utilizando el operador IN.
+Select * from productos  where id_fabricante in (1,3,5);
+
+/*29.- Lista el nombre y el precio de los productos en céntimos (Habrá que multiplicar por 100 el valor del precio). 
+Cree un alias para la columna que contiene el precio que se llame céntimos.*/
+Select nombre, precio * 100 as 'precio en centimos' from productos;
+
+-- 30.- Lista los nombres de los fabricantes cuyo nombre empiece por la letra S.
+Select nombre from fabricantes where nombre like 'S%';
+
+-- 31.- Lista los nombres de los fabricantes cuyo nombre termine por la vocal e.
+Select nombre from fabricantes where nombre like '%E';
+
+-- 32.- Lista los nombres de los fabricantes cuyo nombre contenga el carácter w.
+Select nombre from fabricantes where nombre like '%w%';
+
+-- 33.- Lista los nombres de los fabricantes cuyo nombre sea de 4 caracteres.
+Select nombre from fabricantes where length(nombre) = 4;
+
+-- 34.- Devuelve una lista con el nombre de todos los productos que contienen la cadena Portátil en el nombre.
+Select nombre from productos where nombre like "%Portatil%";
+
+-- 35.- Devuelve una lista con el nombre de todos los productos que contienen la cadena Monitor en el nombre y tienen un precio inferior a 215 €.
+Select nombre from productos where nombre like "%Monitor%" and precio < 215; 
+
+/*36.- Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180€. 
+Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente).*/
+Select nombre, precio from productos where precio >= 180 order by precio desc, nombre asc;
+
+
+
+
+
+
+
+
